@@ -1,4 +1,4 @@
-## Pacotes Utilizados:
+## Pacotes do Projeto:
 - [Pandas](https://pypi.org/project/pandas/)
 - [PySide6](https://pypi.org/project/PySide6/)
 - [PyMySQL](https://pypi.org/project/pymysql/) 
@@ -68,6 +68,6 @@ python main.py
 > 
 > - A lib Pandas foi utilizado para facilitar a visualização dos dados providos do banco.
 >
-> - Caso não seja a primeira utilização, não é necessário a execução de todos os passos descritos em [Utilização](README.md#utilização), apenas execute o arquivo `main.py` da pasta raiz do projeto.
+> - Caso não seja a primeira utilização, não é necessário a execução de todos os passos descritos em 'Utilização', apenas execute o arquivo `main.py` da pasta raiz do projeto.
 > 
 > - Versão Python utilizada: 3.8.6

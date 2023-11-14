@@ -1,49 +1,73 @@
-# Eventos - PySide6
+## Pacotes Utilizados:
+- [Pandas](https://pypi.org/project/pandas/)
+- [PySide6](https://pypi.org/project/PySide6/)
+- [PyMySQL](https://pypi.org/project/pymysql/) 
+- [SQLAlchemy](https://pypi.org/project/SQLAlchemy/)
+- [SQLAlchemy-seeder](https://sqlalchemy-seeder.readthedocs.io/en/latest/) 
 
-Pacotes usados no projeto:
-- PySide6
-- SQLAlchemy 
-- PyMySQL 
-- SQLAlchemy-seeder 
-- Pandas
+> **Important**
+> O [pipenv](https://pypi.org/project/pipenv/) foi utilizado para gerenciar as dependencias do projeto, mas caso necessário, utilize o método de instalação manual.
+
+## Método de Instalação Manual de Dependências:
 
 Para verificar se possui as dependências necessárias, use:
-- pip list
+```
+pip list
+```
 
 Para instalar rapidamente, use os seguintes comandos:
-- pip install pyside6
-- pip install sqlalchemy
-- pip install pymysql 
-- pip install sqlalchemy-seeder
-- pip install pandas
+```
+pip install pandas
+pip install pyside6
+pip install pymysql 
+pip install sqlalchemy
+pip install sqlalchemy-seeder
+```
 
-Para iniciar, execute o arquivo "reset.sql" contido na pasta "sql".
+## Utilização:
 
-Para testar o código, execute o arquivo main, no qual está contido todas as funções responsáveis por retornar e exibir as tabelas devidamente cadastradas pelo python (como o arquivo main importa o arquivo de conexão, mesmo que seja a primeira vez executando o script, ele mesmo se encarregará de mapear o banco de dados).
+> **Warning**
+> Antes de tudo, é necessário criar o banco de dados 'eventos' ou apagá-lo caso o mesmo exista. Para isso, execute o arquivo: `reset.sql`
+ 
+Para resetar manualmente o banco de dados:
 
-Para povoar o banco de dados:
-Rode o seeder.py (é necessário que se rode o script manualmente a fim de evitar falhas devido às limitações do SQLAlchemy-Seeder).
+```
+DROP DATABASE IF EXISTS eventos
+CREATE DATABASE IF NOT EXISTS eventos
+USE eventos
+```
 
-A conexão com o banco de dados está no arquivo "conexao.py" e as tabelas que serão criadas estão no arquivo "entity.py".
+> **Warning**
+> Após o reset, execute os arquivos `conexao.py` e `seeder.py`
 
-O arquivo com o modelo relacional está contido na pasta "sql".
+Para executar via terminal (prompt de comando):
 
-------------------------------------------------------------------------------------------------------------------------
+```
+cd [CAMINHO_PASTA_RAIZ]
+python conexao.py
+python seeder.py
+```
+
+> **Note**
+> Após seguir os passos acima, execute o arquivo `main.py`
+
+Para executar via terminal (prompt de comando):
+
+```
+cd [CAMINHO_PASTA_RAIZ]
+python main.py
+```
 
 
-- Obs. 1: Não foi disponibilizado o ambiente virtual para evitar possíveis incompatibilidades por erro de versão (ao ativar o venv em uma versão SDK diferente, o ambiente virtual quebra e o projeto não funcionará corretamente).
+## Observações:
 
-
-- Obs. 2: Esse arquivo foi criado para facilitar, pois por motivos do SQLAlchemy, a base de dados "eventos" já deve estar criada corretamente.
-
-
-- Obs. 3: A lib Pandas foi utilizado para facilitar a visualização dos dados providos do banco de dados.
-
-
-- Obs. 4: Para a exibição de dados nos dataframes pandas no arquivo main.py, execute os passos descritos para povoar o banco de dados.
-
-
-- Obs. 5: Versão Python utilizada: 3.8.6
-
-
-------------------------------------------------------------------------------------------------------------------------
+> **Note**
+> - Não foi disponibilizado o ambiente virtual para evitar possíveis incompatibilidades por erro de versão (ao ativar o venv em uma versão SDK diferente, o ambiente virtual quebra e o projeto não funcionará corretamente).
+>
+> - Como já especificado, a base de dados "eventos" já deve estar criada corretamente (apenas o banco de dados de forma limpa, sem nehuma tabela).
+> 
+> - A lib Pandas foi utilizado para facilitar a visualização dos dados providos do banco.
+>
+> - Caso não seja a primeira utilização, não é necessário a execução de todos os passos descritos em [Utilização](README.md#utilização), apenas execute o arquivo `main.py` da pasta raiz do projeto.
+> 
+> - Versão Python utilizada: 3.8.6

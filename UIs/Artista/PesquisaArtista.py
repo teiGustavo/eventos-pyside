@@ -1,6 +1,7 @@
 from UIs.FormPesquisa import *
 from UIs.Artista.CadastroArtista import *
 from conexao import *
+from entity import Artista
 from entity import Genero
 
 

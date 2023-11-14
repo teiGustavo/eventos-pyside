@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>325</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Cadastro de Apresentacao - Eventos</string>
+  </property>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="pushButtonSalvar">
+      <property name="text">
+       <string>Salvar</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButtonCancelar">
+      <property name="text">
+       <string>Cancelar</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="formLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>381</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="labelData">
+      <property name="text">
+       <string>Data:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QDateEdit" name="dateEditData"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="labelValorIngresso">
+      <property name="text">
+       <string>Valor do Ingresso:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QSpinBox" name="spinBoxValorIngresso"/>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="labelPublicoPresente">
+      <property name="text">
+       <string>Público Presente:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QSpinBox" name="spinBoxPublicoPresente"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="labelPublicoMaximo">
+      <property name="text">
+       <string>Público Máximo:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QSpinBox" name="spinBoxPublicoMaximo"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="labelArtista">
+      <property name="text">
+       <string>Artista:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QComboBox" name="comboBoxArtista"/>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="labelEvento">
+      <property name="text">
+       <string>Evento:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QComboBox" name="comboBoxEvento"/>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>dateEditData</tabstop>
+  <tabstop>spinBoxValorIngresso</tabstop>
+  <tabstop>spinBoxPublicoMaximo</tabstop>
+  <tabstop>spinBoxPublicoPresente</tabstop>
+  <tabstop>comboBoxArtista</tabstop>
+  <tabstop>comboBoxEvento</tabstop>
+  <tabstop>pushButtonSalvar</tabstop>
+  <tabstop>pushButtonCancelar</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,13 @@
+{
+  "target_class": "entity:Estado",
+  "data": [
+    {
+      "nome": "Minas Gerais",
+      "abreviacao": "MG"
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "abreviacao": "RJ"
+    }
+  ]
+}

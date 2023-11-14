@@ -1,0 +1,25 @@
+{
+  "target_class": "entity:Evento",
+  "data": [
+    {
+      "data": "2023-10-10",
+      "localizacao": "Parque de Exposicao",
+      "!refs": {
+        "tipo_evento_id": {
+          "target_class": "entity:TipoEvento",
+          "criteria": {
+            "nome": "Show"
+          },
+          "field": "id"
+        },
+        "cidade_id": {
+          "target_class": "entity:Cidade",
+          "criteria": {
+            "nome": "Muriae"
+          },
+          "field": "id"
+        }
+      }
+    }
+  ]
+}

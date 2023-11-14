@@ -1,0 +1,26 @@
+{
+  "target_class": "entity:Despesa",
+  "data": [
+    {
+      "descricao": "Gasto com Midias Digitais",
+      "valor": 12000.55,
+      "data": "2023-09-15",
+      "!refs": {
+        "tipo_despesa_id": {
+          "target_class": "entity:TipoDespesa",
+          "criteria": {
+            "nome": "Marketing"
+          },
+          "field": "id"
+        },
+        "evento_id": {
+          "target_class": "entity:Evento",
+          "criteria": {
+            "id": "1"
+          },
+          "field": "id"
+        }
+      }
+    }
+  ]
+}

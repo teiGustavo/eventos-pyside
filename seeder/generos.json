@@ -1,0 +1,17 @@
+{
+  "target_class": "entity:Genero",
+  "data": [
+    {
+      "nome": "MPB"
+    },
+    {
+      "nome": "Funk"
+    },
+    {
+      "nome": "Sertanejo"
+    },
+    {
+      "nome": "Eletronica"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "target_class": "entity:TipoDespesa",
+  "data": [
+    {
+      "nome": "Hospedagem"
+    },
+    {
+      "nome": "Marketing"
+    }
+  ]
+}

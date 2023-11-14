@@ -1,0 +1,33 @@
+{
+  "target_class": "entity:Artista",
+  "data": [
+    {
+      "nome": "Marilia Mendonca",
+      "telefone": "(32) 9 1234-5678",
+      "email": "shows@mariliamendonca.com.br",
+      "!refs": {
+        "genero_id": {
+          "target_class": "entity:Genero",
+          "criteria": {
+            "nome": "Sertanejo"
+          },
+          "field": "id"
+        }
+      }
+    },
+    {
+      "nome": "Alok",
+      "telefone": "(32) 9 2345-6789",
+      "email": "shows@alok.com",
+      "!refs": {
+        "genero_id": {
+          "target_class": "entity:Genero",
+          "criteria": {
+            "nome": "Eletronica"
+          },
+          "field": "id"
+        }
+      }
+    }
+  ]
+}

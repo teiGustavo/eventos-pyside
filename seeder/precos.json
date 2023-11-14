@@ -1,0 +1,43 @@
+{
+  "target_class": "entity:Preco",
+  "data": [
+    {
+      "cache": 15000,
+      "!refs": {
+        "artista_id": {
+          "target_class": "entity:Artista",
+          "criteria": {
+            "nome": "Alok"
+          },
+          "field": "id"
+        },
+        "evento_id": {
+          "target_class": "entity:Evento",
+          "criteria": {
+            "id": "1"
+          },
+          "field": "id"
+        }
+      }
+    },
+    {
+      "cache": 10000,
+      "!refs": {
+        "artista_id": {
+          "target_class": "entity:Artista",
+          "criteria": {
+            "nome": "Marilia Mendonca"
+          },
+          "field": "id"
+        },
+        "evento_id": {
+          "target_class": "entity:Evento",
+          "criteria": {
+            "id": "1"
+          },
+          "field": "id"
+        }
+      }
+    }
+  ]
+}

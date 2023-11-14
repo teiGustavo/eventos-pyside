@@ -1,0 +1,17 @@
+{
+  "target_class": "entity:Receita",
+  "data": [
+    {
+      "valor": 250000.85,
+      "!refs": {
+        "evento_id": {
+          "target_class": "entity:Evento",
+          "criteria": {
+            "id": "1"
+          },
+          "field": "id"
+        }
+      }
+    }
+  ]
+}

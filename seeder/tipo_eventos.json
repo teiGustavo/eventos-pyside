@@ -1,0 +1,11 @@
+{
+  "target_class": "entity:TipoEvento",
+  "data": [
+    {
+      "nome": "Show"
+    },
+    {
+      "nome": "Peca"
+    }
+  ]
+}

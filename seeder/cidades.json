@@ -1,0 +1,29 @@
+{
+  "target_class": "entity:Cidade",
+  "data": [
+    {
+      "nome": "Muriae",
+      "!refs": {
+        "estado_id": {
+          "target_class": "entity:Estado",
+          "criteria": {
+            "abreviacao": "MG"
+          },
+          "field": "id"
+        }
+      }
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "!refs": {
+        "estado_id": {
+          "target_class": "entity:Estado",
+          "criteria": {
+            "abreviacao": "RJ"
+          },
+          "field": "id"
+        }
+      }
+    }
+  ]
+}

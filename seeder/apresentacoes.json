@@ -1,0 +1,47 @@
+{
+  "target_class": "entity:Apresentacao",
+  "data": [
+    {
+      "data": "2023-10-10",
+      "valor_ingresso": 150.00,
+      "publico_maximo": 35000,
+      "!refs": {
+        "artista_id": {
+          "target_class": "entity:Artista",
+          "criteria": {
+            "nome": "Alok"
+          },
+          "field": "id"
+        },
+        "evento_id": {
+          "target_class": "entity:Evento",
+          "criteria": {
+            "id": "1"
+          },
+          "field": "id"
+        }
+      }
+    },
+    {
+      "data": "2023-10-10",
+      "valor_ingresso": 150.00,
+      "publico_maximo": 35000,
+      "!refs": {
+        "artista_id": {
+          "target_class": "entity:Artista",
+          "criteria": {
+            "nome": "Marilia Mendonca"
+          },
+          "field": "id"
+        },
+        "evento_id": {
+          "target_class": "entity:Evento",
+          "criteria": {
+            "id": "1"
+          },
+          "field": "id"
+        }
+      }
+    }
+  ]
+}

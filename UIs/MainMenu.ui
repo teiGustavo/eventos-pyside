@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Janela Principal - Eventos</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuCadastro">
+    <property name="title">
+     <string>Casdastro</string>
+    </property>
+    <addaction name="actionEstado"/>
+    <addaction name="actionCidade"/>
+    <addaction name="actionGenero"/>
+    <addaction name="actionArtista"/>
+    <addaction name="actionTipo_de_Eventos"/>
+    <addaction name="actionEvento"/>
+    <addaction name="actionApresentacao"/>
+    <addaction name="actionReceita"/>
+    <addaction name="actionTipo_de_Despesa"/>
+    <addaction name="actionDespesa"/>
+    <addaction name="actionPreco"/>
+   </widget>
+   <addaction name="menuCadastro"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionEstado">
+   <property name="text">
+    <string>Estado</string>
+   </property>
+  </action>
+  <action name="actionPesquisaEstado">
+   <property name="text">
+    <string>Estado</string>
+   </property>
+  </action>
+  <action name="actionCidade">
+   <property name="text">
+    <string>Cidade</string>
+   </property>
+  </action>
+  <action name="actionGenero">
+   <property name="text">
+    <string>Gênero</string>
+   </property>
+  </action>
+  <action name="actionArtista">
+   <property name="text">
+    <string>Artista</string>
+   </property>
+  </action>
+  <action name="actionTipo_de_Eventos">
+   <property name="text">
+    <string>Tipo de Evento</string>
+   </property>
+  </action>
+  <action name="actionEvento">
+   <property name="text">
+    <string>Evento</string>
+   </property>
+  </action>
+  <action name="actionTipo_de_Despesa">
+   <property name="text">
+    <string>Tipo de Despesa</string>
+   </property>
+  </action>
+  <action name="actionDespesa">
+   <property name="text">
+    <string>Despesa</string>
+   </property>
+  </action>
+  <action name="actionReceita">
+   <property name="text">
+    <string>Receita</string>
+   </property>
+  </action>
+  <action name="actionPreco">
+   <property name="text">
+    <string>Preco</string>
+   </property>
+  </action>
+  <action name="actionApresentacao">
+   <property name="text">
+    <string>Apresentação</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

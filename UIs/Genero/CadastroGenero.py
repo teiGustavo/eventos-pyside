@@ -1,6 +1,5 @@
 from UIs.Genero.CadastroGeneroDialog_ui import *
 from conexao import *
-from entity import Estado
 from PySide6.QtCore import Slot
 
 

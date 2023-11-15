@@ -5,7 +5,7 @@
 - [SQLAlchemy](https://pypi.org/project/SQLAlchemy/)
 - [SQLAlchemy-seeder](https://sqlalchemy-seeder.readthedocs.io/en/latest/) 
 
-> **Important**
+> [!IMPORTANT]
 > O [pipenv](https://pypi.org/project/pipenv/) foi utilizado para gerenciar as dependencias do projeto, mas caso necessário, utilize o método de instalação manual.
 
 ## Método de Instalação Manual de Dependências:
@@ -26,7 +26,7 @@ pip install sqlalchemy-seeder
 
 ## Utilização:
 
-> **Warning**
+> [!WARNING]
 > Antes de tudo, é necessário criar o banco de dados 'eventos' ou apagá-lo caso o mesmo exista. Para isso, execute o arquivo: `reset.sql`
  
 Para resetar manualmente o banco de dados:
@@ -37,7 +37,7 @@ CREATE DATABASE IF NOT EXISTS eventos
 USE eventos
 ```
 
-> **Warning**
+> [!WARNING]
 > Após o reset, execute os arquivos `conexao.py` e `seeder.py`
 
 Para executar via terminal (prompt de comando):
@@ -48,7 +48,7 @@ python conexao.py
 python seeder.py
 ```
 
-> **Note**
+> [!NOTE]
 > Após seguir os passos acima, execute o arquivo `main.py`
 
 Para executar via terminal (prompt de comando):
@@ -61,7 +61,6 @@ python main.py
 
 ## Observações:
 
-> **Note**
 > - Não foi disponibilizado o ambiente virtual para evitar possíveis incompatibilidades por erro de versão (ao ativar o venv em uma versão SDK diferente, o ambiente virtual quebra e o projeto não funcionará corretamente).
 >
 > - Como já especificado, a base de dados "eventos" já deve estar criada corretamente (apenas o banco de dados de forma limpa, sem nehuma tabela).

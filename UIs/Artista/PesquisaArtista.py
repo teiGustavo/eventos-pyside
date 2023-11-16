@@ -1,18 +1,6 @@
 from UIs.FormPesquisa import *
 from UIs.Artista.CadastroArtista import *
-from conexao import *
-from entity import Artista
-from entity import Genero
-
-
-def get_genero_by_id(genero_id):
-    genero = session.query(Genero).filter(Genero.id == genero_id).first()
-    return genero.nome
-
-
-def get_genero_by_name(nome_genero):
-    genero = session.query(Genero).filter(Genero.nome.contains(nome_genero)).first()
-    return genero.id
+from helpers import *
 
 
 class PesquisaArtista(QWidget):

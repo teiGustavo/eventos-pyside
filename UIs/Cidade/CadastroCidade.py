@@ -3,6 +3,7 @@ from conexao import *
 from entity import Estado
 from entity import Cidade
 from PySide6.QtCore import Slot
+from helpers import *
 
 
 class CadastroCidade(QDialog):
@@ -31,15 +32,11 @@ class CadastroCidade(QDialog):
         self.form_pesquisa.preencher_tabela()
         return super().closeEvent(event)
 
-    def get_estado_id(self):
-        estado = session.query(Estado).filter(Estado.nome.contains(self.ui.comboBoxEstado.currentText())).first()
-        return estado.id
-
     @Slot()
     def salvar(self):
         try:
             self.cidade.nome = self.ui.lineEditNome.text()
-            self.cidade.estado_id = self.get_estado_id()
+            self.cidade.estado_id = get_estado_by_name(self.ui.comboBoxEstado.currentText())
 
             if self.cidade.id <= 0:
                 session.add(self.cidade)

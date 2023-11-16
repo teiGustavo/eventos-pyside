@@ -1,8 +1,6 @@
 from UIs.Artista.CadastroArtistaDialog_ui import *
-from conexao import *
-from entity import Artista
-from entity import Genero
 from PySide6.QtCore import Slot
+from helpers import *
 
 
 class CadastroArtista(QDialog):
@@ -37,10 +35,6 @@ class CadastroArtista(QDialog):
         self.form_pesquisa.preencher_tabela()
         return super().closeEvent(event)
 
-    def get_genero_id(self):
-        genero = session.query(Genero).filter(Genero.nome.contains(self.ui.comboBoxGenero.currentText())).first()
-        return genero.id
-
     @Slot()
     def salvar(self):
         try:
@@ -48,7 +42,7 @@ class CadastroArtista(QDialog):
             self.artista.telefone = self.ui.lineEditTelefone.text()
             self.artista.email = self.ui.lineEditEmail.text()
             self.artista.pagina_web = self.ui.lineEditPagina.text()
-            self.artista.genero_id = self.get_genero_id()
+            self.artista.genero_id = get_genero_by_name(self.ui.comboBoxGenero.currentText())
 
             if self.artista.pagina_web == "":
                 self.artista.pagina_web = None

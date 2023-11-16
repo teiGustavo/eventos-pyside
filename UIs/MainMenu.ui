@@ -31,13 +31,13 @@
     <addaction name="actionCidade"/>
     <addaction name="actionGenero"/>
     <addaction name="actionArtista"/>
-    <addaction name="actionTipo_de_Eventos"/>
+    <addaction name="actionTipoEvento"/>
     <addaction name="actionEvento"/>
+    <addaction name="actionPreco"/>
     <addaction name="actionApresentacao"/>
     <addaction name="actionReceita"/>
-    <addaction name="actionTipo_de_Despesa"/>
+    <addaction name="actionTipoDespesa"/>
     <addaction name="actionDespesa"/>
-    <addaction name="actionPreco"/>
    </widget>
    <addaction name="menuCadastro"/>
   </widget>
@@ -67,7 +67,7 @@
     <string>Artista</string>
    </property>
   </action>
-  <action name="actionTipo_de_Eventos">
+  <action name="actionTipoEvento">
    <property name="text">
     <string>Tipo de Evento</string>
    </property>
@@ -77,7 +77,7 @@
     <string>Evento</string>
    </property>
   </action>
-  <action name="actionTipo_de_Despesa">
+  <action name="actionTipoDespesa">
    <property name="text">
     <string>Tipo de Despesa</string>
    </property>

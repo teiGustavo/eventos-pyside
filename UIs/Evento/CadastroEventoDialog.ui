@@ -45,7 +45,7 @@
      <x>10</x>
      <y>40</y>
      <width>381</width>
-     <height>101</height>
+     <height>108</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
@@ -55,9 +55,6 @@
        <string>Data:</string>
       </property>
      </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QDateEdit" name="dateEditData"/>
     </item>
     <item row="1" column="0">
      <widget class="QLabel" name="labelLocalizacao">
@@ -89,11 +86,17 @@
     <item row="3" column="1">
      <widget class="QComboBox" name="comboBoxCidade"/>
     </item>
+    <item row="0" column="1">
+     <widget class="QDateEdit" name="dateEditData">
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>
  <tabstops>
-  <tabstop>dateEditData</tabstop>
   <tabstop>lineEditLocalizacao</tabstop>
   <tabstop>comboBoxTipoEvento</tabstop>
   <tabstop>comboBoxCidade</tabstop>

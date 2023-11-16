@@ -1,17 +1,6 @@
 from UIs.FormPesquisa import *
 from UIs.Cidade.CadastroCidade import *
-from conexao import *
-from entity import Estado
-
-
-def get_estado_by_id(estado_id):
-    estado = session.query(Estado).filter(Estado.id == estado_id).first()
-    return estado.nome
-
-
-def get_estado_by_name(nome_estado):
-    estado = session.query(Estado).filter(Estado.nome.contains(nome_estado)).first()
-    return estado.id
+from helpers import *
 
 
 class PesquisaCidade(QWidget):
@@ -26,7 +15,7 @@ class PesquisaCidade(QWidget):
         self.ui.BtnIncluir.clicked.connect(self.exibir_cadastro)
         self.ui.EditValorPesquisa.textChanged.connect(self.pesquisar)
         self.ui.BtnPesquisar.clicked.connect(self.pesquisar)
-        self.ui.tableResultado.cellDoubleClicked.connect(self.seleiona_linha)
+        self.ui.tableResultado.cellDoubleClicked.connect(self.seleciona_linha)
 
         self.cadastro = CadastroCidade()
         self.cidade = None
@@ -39,7 +28,7 @@ class PesquisaCidade(QWidget):
     def pesquisar(self):
         self.preencher_tabela()
 
-    def seleiona_linha(self):
+    def seleciona_linha(self):
         table = self.ui.tableResultado
         linha = table.currentIndex().row()
         self.cadastro = CadastroCidade()
@@ -49,6 +38,7 @@ class PesquisaCidade(QWidget):
         cidade.id = (table.item(linha, 0)).text()
         cidade.nome = (table.item(linha, 1)).text()
         nome_estado = (table.item(linha, 2)).text()
+
         cidade.estado_id = get_estado_by_name(nome_estado)
 
         self.cidade = cidade

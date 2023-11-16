@@ -45,7 +45,7 @@
      <x>10</x>
      <y>40</y>
      <width>381</width>
-     <height>126</height>
+     <height>136</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
@@ -91,7 +91,11 @@
      <widget class="QDoubleSpinBox" name="doubleSpinBoxValor"/>
     </item>
     <item row="2" column="1">
-     <widget class="QDateEdit" name="dateEditData"/>
+     <widget class="QDateEdit" name="dateEditData">
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
     </item>
     <item row="3" column="1">
      <widget class="QComboBox" name="comboBoxTipoDespesa"/>

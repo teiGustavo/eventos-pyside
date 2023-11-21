@@ -13,13 +13,20 @@ def unformat_sql_date(data):
     return f"{data[2]}/{data[1]}/{data[0]}"
 
 
-def get_date_array(data):
-    if '-' in data:
-        return data.split('-')
+def format_monetary(money):
+    return f"R$ {money:_.2f}".replace('.', ',').replace('_', '.')
 
-    data = data.split('/')
-    return data[::-1]
 
+def unformat_monetary(money):
+    return money.replace('R$ ', '').replace('.', '').replace(',', '.')
+
+
+def format_integer(integer):
+    return f"{integer:_}".replace('_', '.')
+
+
+def unformat_integer(integer):
+    return integer.replace('.', '')
 
 
 def get_estado_by_id(estado_id):
@@ -49,6 +56,7 @@ def get_genero_by_id(genero_id):
 
 def get_genero_by_name(nome_genero):
     genero = session.query(Genero).filter(Genero.nome.contains(nome_genero)).first()
+
     return genero.id
 
 
@@ -76,7 +84,8 @@ def format_evento(evento: Evento):
     data = evento.data
     data = f"{data}".split('-')
 
-    return f"{data[2]}/{data[1]}/{data[0]} | {evento.localizacao} | {get_cidade_by_id(evento.cidade_id)}"
+    return (f"{data[2]}/{data[1]}/{data[0]} | {get_tipo_evento_by_id(evento.tipo_evento_id)} | {evento.localizacao} | "
+            f"{get_cidade_by_id(evento.cidade_id)}")
 
 
 def get_evento_by_id(evento_id):
@@ -91,8 +100,22 @@ def get_evento_by_format(evento_formatado):
     data = evento_formatado[0].split('/')
 
     evento = session.query(Evento).filter(
-        Evento.data.contains(f'{data[2]}-{data[1]}-{data[0]}'), Evento.localizacao.contains(evento_formatado[1]),
-        Evento.cidade_id == get_cidade_by_name(evento_formatado[2])
+        Evento.data.contains(f'{data[2]}-{data[1]}-{data[0]}'),
+        Evento.tipo_evento_id == get_tipo_evento_by_name(evento_formatado[1]),
+        Evento.localizacao.contains(evento_formatado[2]),
+        Evento.cidade_id == get_cidade_by_name(evento_formatado[3])
     ).first()
 
     return evento.id
+
+
+def get_tipo_despesa_by_id(tipo_despesa_id):
+    tipo_despesa = session.query(TipoDespesa).filter(TipoDespesa.id == tipo_despesa_id).first()
+
+    return tipo_despesa.nome
+
+
+def get_tipo_despesa_by_name(nome_tipo_despesa):
+    tipo_despesa = session.query(TipoDespesa).filter(TipoDespesa.nome.contains(nome_tipo_despesa)).first()
+
+    return tipo_despesa.id

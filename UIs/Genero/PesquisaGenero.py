@@ -67,6 +67,7 @@ class PesquisaGenero(QWidget):
 
         self.ui.tableResultado.setColumnCount(total_colunas)
         self.ui.tableResultado.setHorizontalHeaderLabels(colunas)
+        self.ui.tableResultado.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
 
         for linha in range(total):
             for coluna in range(total_colunas):

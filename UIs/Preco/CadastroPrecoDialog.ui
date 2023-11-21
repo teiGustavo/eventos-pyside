@@ -78,8 +78,20 @@
     </item>
     <item row="0" column="1">
      <widget class="QDoubleSpinBox" name="doubleSpinBoxCache">
+      <property name="showGroupSeparator" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="prefix">
+       <string>R$ </string>
+      </property>
+      <property name="suffix">
+       <string/>
+      </property>
       <property name="maximum">
        <double>1000000000000.000000000000000</double>
+      </property>
+      <property name="stepType">
+       <enum>QAbstractSpinBox::DefaultStepType</enum>
       </property>
      </widget>
     </item>

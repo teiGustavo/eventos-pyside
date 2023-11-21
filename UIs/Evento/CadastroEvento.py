@@ -11,6 +11,7 @@ class CadastroEvento(QDialog):
         self.ui.setupUi(self)
 
         self.ui.pushButtonSalvar.clicked.connect(self.salvar)
+        self.ui.pushButtonCancelar.clicked.connect(self.sair)
 
         self.evento = Evento()
         self.evento.id = 0
@@ -29,9 +30,16 @@ class CadastroEvento(QDialog):
         # Definições Padrão
         self.ui.lineEditLocalizacao.setMaxLength(100)
 
+        if self.evento.id == 0:
+            self.ui.dateEditData.setDate(QDate.currentDate())
+
     def closeEvent(self, event):
         self.form_pesquisa.preencher_tabela()
         return super().closeEvent(event)
+
+    def clear_all(self):
+        self.ui.dateEditData.clear()
+        self.ui.lineEditLocalizacao.setText("")
 
     @Slot()
     def salvar(self):
@@ -48,8 +56,7 @@ class CadastroEvento(QDialog):
 
             session.commit()
 
-            self.ui.dateEditData.clear()
-            self.ui.lineEditLocalizacao.setText("")
+            self.clear_all()
 
             self.evento = Evento()
             self.evento.id = 0
@@ -58,3 +65,8 @@ class CadastroEvento(QDialog):
 
         except Exception as ex:
             print(ex)
+
+    @Slot()
+    def sair(self):
+        self.clear_all()
+        self.close()

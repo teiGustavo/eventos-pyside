@@ -12,6 +12,7 @@ class CadastroEstado(QDialog):
         self.ui.setupUi(self)
 
         self.ui.pushButtonSalvar.clicked.connect(self.salvar)
+        self.ui.pushButtonCancelar.clicked.connect(self.sair)
 
         self.estado = Estado()
         self.estado.id = 0
@@ -26,6 +27,10 @@ class CadastroEstado(QDialog):
         self.form_pesquisa.preencher_tabela()
         return super().closeEvent(event)
 
+    def clear_all(self):
+        self.ui.lineEditNome.setText("")
+        self.ui.lineEditSigla.setText("")
+
     @Slot()
     def salvar(self):
         try:
@@ -39,8 +44,7 @@ class CadastroEstado(QDialog):
 
             session.commit()
 
-            self.ui.lineEditNome.setText("")
-            self.ui.lineEditSigla.setText("")
+            self.clear_all()
 
             self.estado = Estado()
             self.estado.id = 0
@@ -49,3 +53,8 @@ class CadastroEstado(QDialog):
 
         except Exception as ex:
             print(ex)
+
+    @Slot()
+    def sair(self):
+        self.clear_all()
+        self.close()

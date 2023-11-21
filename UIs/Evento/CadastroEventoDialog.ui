@@ -97,6 +97,7 @@
   </widget>
  </widget>
  <tabstops>
+  <tabstop>dateEditData</tabstop>
   <tabstop>lineEditLocalizacao</tabstop>
   <tabstop>comboBoxTipoEvento</tabstop>
   <tabstop>comboBoxCidade</tabstop>

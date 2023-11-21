@@ -45,30 +45,53 @@
      <x>10</x>
      <y>40</y>
      <width>381</width>
-     <height>136</height>
+     <height>141</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
-    <item row="0" column="0">
+    <item row="1" column="0">
      <widget class="QLabel" name="labelDescricao">
       <property name="text">
        <string>Descrição:</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
+    <item row="2" column="0">
      <widget class="QLabel" name="labelValor">
       <property name="text">
        <string>Valor:</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="lineEditDescricao"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QDoubleSpinBox" name="doubleSpinBoxValor">
+      <property name="prefix">
+       <string>R$ </string>
+      </property>
+      <property name="maximum">
+       <double>1000000000000.989990234375000</double>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
      <widget class="QLabel" name="labelData">
       <property name="text">
        <string>Data:</string>
       </property>
      </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QDateEdit" name="dateEditData">
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QComboBox" name="comboBoxTipoDespesa"/>
     </item>
     <item row="3" column="0">
      <widget class="QLabel" name="labelTipoDespesa">
@@ -84,22 +107,6 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="lineEditDescricao"/>
-    </item>
-    <item row="1" column="1">
-     <widget class="QDoubleSpinBox" name="doubleSpinBoxValor"/>
-    </item>
-    <item row="2" column="1">
-     <widget class="QDateEdit" name="dateEditData">
-      <property name="calendarPopup">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QComboBox" name="comboBoxTipoDespesa"/>
-    </item>
     <item row="4" column="1">
      <widget class="QComboBox" name="comboBoxEvento"/>
     </item>
@@ -107,9 +114,9 @@
   </widget>
  </widget>
  <tabstops>
+  <tabstop>dateEditData</tabstop>
   <tabstop>lineEditDescricao</tabstop>
   <tabstop>doubleSpinBoxValor</tabstop>
-  <tabstop>dateEditData</tabstop>
   <tabstop>comboBoxTipoDespesa</tabstop>
   <tabstop>comboBoxEvento</tabstop>
   <tabstop>pushButtonSalvar</tabstop>

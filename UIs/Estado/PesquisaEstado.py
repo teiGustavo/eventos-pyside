@@ -17,6 +17,8 @@ class PesquisaEstado(QWidget):
         self.ui.BtnPesquisar.clicked.connect(self.pesquisar)
         self.ui.tableResultado.cellDoubleClicked.connect(self.seleiona_linha)
 
+        # Definições Padrão
+
     def exibir_cadastro_estado(self):
         self.cadastro = CadastroEstado()
         self.cadastro.form_pesquisa = self
@@ -69,6 +71,7 @@ class PesquisaEstado(QWidget):
 
         self.ui.tableResultado.setColumnCount(total_colunas)
         self.ui.tableResultado.setHorizontalHeaderLabels(colunas)
+        self.ui.tableResultado.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
 
         for linha in range(total):
             for coluna in range(total_colunas):

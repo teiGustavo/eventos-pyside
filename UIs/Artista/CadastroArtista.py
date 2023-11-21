@@ -11,6 +11,7 @@ class CadastroArtista(QDialog):
         self.ui.setupUi(self)
 
         self.ui.pushButtonSalvar.clicked.connect(self.salvar)
+        self.ui.pushButtonCancelar.clicked.connect(self.sair)
 
         self.artista = Artista()
         self.artista.id = 0
@@ -35,6 +36,12 @@ class CadastroArtista(QDialog):
         self.form_pesquisa.preencher_tabela()
         return super().closeEvent(event)
 
+    def clear_all(self):
+        self.ui.lineEditNome.setText("")
+        self.ui.lineEditTelefone.setText("")
+        self.ui.lineEditEmail.setText("")
+        self.ui.lineEditPagina.setText("")
+
     @Slot()
     def salvar(self):
         try:
@@ -57,12 +64,14 @@ class CadastroArtista(QDialog):
             self.artista = Artista()
             self.artista.id = 0
 
-            self.ui.lineEditNome.setText("")
-            self.ui.lineEditTelefone.setText("")
-            self.ui.lineEditEmail.setText("")
-            self.ui.lineEditPagina.setText("")
+            self.clear_all()
 
             self.close()
 
         except Exception as ex:
             print(ex)
+
+    @Slot()
+    def sair(self):
+        self.clear_all()
+        self.close()

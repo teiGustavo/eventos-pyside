@@ -35,9 +35,9 @@
     <addaction name="actionEvento"/>
     <addaction name="actionPreco"/>
     <addaction name="actionApresentacao"/>
-    <addaction name="actionReceita"/>
     <addaction name="actionTipoDespesa"/>
     <addaction name="actionDespesa"/>
+    <addaction name="actionReceita"/>
    </widget>
    <addaction name="menuCadastro"/>
   </widget>

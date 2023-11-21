@@ -70,9 +70,6 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QSpinBox" name="spinBoxValorIngresso"/>
-    </item>
     <item row="3" column="0">
      <widget class="QLabel" name="labelPublicoPresente">
       <property name="text">
@@ -81,7 +78,17 @@
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QSpinBox" name="spinBoxPublicoPresente"/>
+     <widget class="QSpinBox" name="spinBoxPublicoPresente">
+      <property name="suffix">
+       <string> pessoas</string>
+      </property>
+      <property name="prefix">
+       <string/>
+      </property>
+      <property name="maximum">
+       <number>999999999</number>
+      </property>
+     </widget>
     </item>
     <item row="2" column="0">
      <widget class="QLabel" name="labelPublicoMaximo">
@@ -91,7 +98,14 @@
      </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QSpinBox" name="spinBoxPublicoMaximo"/>
+     <widget class="QSpinBox" name="spinBoxPublicoMaximo">
+      <property name="suffix">
+       <string> pessoas</string>
+      </property>
+      <property name="maximum">
+       <number>999999999</number>
+      </property>
+     </widget>
     </item>
     <item row="4" column="0">
      <widget class="QLabel" name="labelArtista">
@@ -113,12 +127,22 @@
     <item row="5" column="1">
      <widget class="QComboBox" name="comboBoxEvento"/>
     </item>
+    <item row="1" column="1">
+     <widget class="QDoubleSpinBox" name="doubleSpinBoxValorIngresso">
+      <property name="prefix">
+       <string>R$ </string>
+      </property>
+      <property name="maximum">
+       <double>1000000000000000.000000000000000</double>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>
  <tabstops>
   <tabstop>dateEditData</tabstop>
-  <tabstop>spinBoxValorIngresso</tabstop>
+  <tabstop>doubleSpinBoxValorIngresso</tabstop>
   <tabstop>spinBoxPublicoMaximo</tabstop>
   <tabstop>spinBoxPublicoPresente</tabstop>
   <tabstop>comboBoxArtista</tabstop>

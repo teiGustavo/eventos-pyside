@@ -16,8 +16,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QDialog,
-    QFormLayout, QHBoxLayout, QLabel, QPushButton,
-    QSizePolicy, QSpinBox, QWidget)
+    QDoubleSpinBox, QFormLayout, QHBoxLayout, QLabel,
+    QPushButton, QSizePolicy, QSpinBox, QWidget)
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -62,11 +62,6 @@ class Ui_Dialog(object):
 
         self.formLayout.setWidget(1, QFormLayout.LabelRole, self.labelValorIngresso)
 
-        self.spinBoxValorIngresso = QSpinBox(self.formLayoutWidget)
-        self.spinBoxValorIngresso.setObjectName(u"spinBoxValorIngresso")
-
-        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.spinBoxValorIngresso)
-
         self.labelPublicoPresente = QLabel(self.formLayoutWidget)
         self.labelPublicoPresente.setObjectName(u"labelPublicoPresente")
 
@@ -74,6 +69,7 @@ class Ui_Dialog(object):
 
         self.spinBoxPublicoPresente = QSpinBox(self.formLayoutWidget)
         self.spinBoxPublicoPresente.setObjectName(u"spinBoxPublicoPresente")
+        self.spinBoxPublicoPresente.setMaximum(999999999)
 
         self.formLayout.setWidget(3, QFormLayout.FieldRole, self.spinBoxPublicoPresente)
 
@@ -84,6 +80,7 @@ class Ui_Dialog(object):
 
         self.spinBoxPublicoMaximo = QSpinBox(self.formLayoutWidget)
         self.spinBoxPublicoMaximo.setObjectName(u"spinBoxPublicoMaximo")
+        self.spinBoxPublicoMaximo.setMaximum(999999999)
 
         self.formLayout.setWidget(2, QFormLayout.FieldRole, self.spinBoxPublicoMaximo)
 
@@ -107,8 +104,14 @@ class Ui_Dialog(object):
 
         self.formLayout.setWidget(5, QFormLayout.FieldRole, self.comboBoxEvento)
 
-        QWidget.setTabOrder(self.dateEditData, self.spinBoxValorIngresso)
-        QWidget.setTabOrder(self.spinBoxValorIngresso, self.spinBoxPublicoMaximo)
+        self.doubleSpinBoxValorIngresso = QDoubleSpinBox(self.formLayoutWidget)
+        self.doubleSpinBoxValorIngresso.setObjectName(u"doubleSpinBoxValorIngresso")
+        self.doubleSpinBoxValorIngresso.setMaximum(1000000000000000.000000000000000)
+
+        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.doubleSpinBoxValorIngresso)
+
+        QWidget.setTabOrder(self.dateEditData, self.doubleSpinBoxValorIngresso)
+        QWidget.setTabOrder(self.doubleSpinBoxValorIngresso, self.spinBoxPublicoMaximo)
         QWidget.setTabOrder(self.spinBoxPublicoMaximo, self.spinBoxPublicoPresente)
         QWidget.setTabOrder(self.spinBoxPublicoPresente, self.comboBoxArtista)
         QWidget.setTabOrder(self.comboBoxArtista, self.comboBoxEvento)
@@ -127,8 +130,12 @@ class Ui_Dialog(object):
         self.labelData.setText(QCoreApplication.translate("Dialog", u"Data:", None))
         self.labelValorIngresso.setText(QCoreApplication.translate("Dialog", u"Valor do Ingresso:", None))
         self.labelPublicoPresente.setText(QCoreApplication.translate("Dialog", u"P\u00fablico Presente:", None))
+        self.spinBoxPublicoPresente.setSuffix(QCoreApplication.translate("Dialog", u" pessoas", None))
+        self.spinBoxPublicoPresente.setPrefix("")
         self.labelPublicoMaximo.setText(QCoreApplication.translate("Dialog", u"P\u00fablico M\u00e1ximo:", None))
+        self.spinBoxPublicoMaximo.setSuffix(QCoreApplication.translate("Dialog", u" pessoas", None))
         self.labelArtista.setText(QCoreApplication.translate("Dialog", u"Artista:", None))
         self.labelEvento.setText(QCoreApplication.translate("Dialog", u"Evento:", None))
+        self.doubleSpinBoxValorIngresso.setPrefix(QCoreApplication.translate("Dialog", u"R$ ", None))
     # retranslateUi
 

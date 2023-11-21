@@ -1,8 +1,6 @@
 from UIs.Receita.CadastroReceitaDialog_ui import *
-from conexao import *
-from entity import Receita
-from entity import Evento
 from PySide6.QtCore import Slot
+from helpers import *
 
 
 class CadastroReceita(QDialog):
@@ -13,6 +11,7 @@ class CadastroReceita(QDialog):
         self.ui.setupUi(self)
 
         self.ui.pushButtonSalvar.clicked.connect(self.salvar)
+        self.ui.pushButtonCancelar.clicked.connect(self.sair)
 
         self.receita = Receita()
         self.receita.id = 0
@@ -22,28 +21,20 @@ class CadastroReceita(QDialog):
         eventos = session.query(Evento).all()
 
         for evento in eventos:
-            self.ui.comboBoxEvento.addItem(f"{evento.data} - {evento.localizacao}")
+            self.ui.comboBoxEvento.addItem(format_evento(evento))
 
     def closeEvent(self, event):
         self.form_pesquisa.preencher_tabela()
         return super().closeEvent(event)
 
-    def get_evento_id(self):
-        combobox_evento_text = (self.ui.comboBoxEvento.currentText()).split(' - ')
-        data = combobox_evento_text[0]
-        localizacao = combobox_evento_text[1]
-
-        evento = session.query(Evento).filter(
-            Evento.data.contains(data), Evento.localizacao.contains(localizacao)
-        ).first()
-
-        return evento.id
+    def clear_all(self):
+        self.ui.doubleSpinBoxValor.setValue(0)
 
     @Slot()
     def salvar(self):
         try:
-            self.receita.valor = self.ui.doubleSpinBoxValor.text()
-            self.receita.evento_id = self.get_evento_id()
+            self.receita.valor = self.ui.doubleSpinBoxValor.value()
+            self.receita.evento_id = get_evento_by_format(self.ui.comboBoxEvento.currentText())
 
             if self.receita.id <= 0:
                 session.add(self.receita)
@@ -52,7 +43,7 @@ class CadastroReceita(QDialog):
 
             session.commit()
 
-            self.ui.doubleSpinBoxValor.setValue(0)
+            self.clear_all()
 
             self.receita = Receita()
             self.receita.id = 0
@@ -61,3 +52,8 @@ class CadastroReceita(QDialog):
 
         except Exception as ex:
             print(ex)
+
+    @Slot()
+    def sair(self):
+        self.clear_all()
+        self.close()

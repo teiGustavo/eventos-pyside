@@ -14,6 +14,7 @@ class CadastroCidade(QDialog):
         self.ui.setupUi(self)
 
         self.ui.pushButtonSalvar.clicked.connect(self.salvar)
+        self.ui.pushButtonCancelar.clicked.connect(self.sair)
 
         self.cidade = Cidade()
         self.cidade.id = 0
@@ -32,6 +33,9 @@ class CadastroCidade(QDialog):
         self.form_pesquisa.preencher_tabela()
         return super().closeEvent(event)
 
+    def clear_all(self):
+        self.ui.lineEditNome.setText("")
+
     @Slot()
     def salvar(self):
         try:
@@ -45,7 +49,7 @@ class CadastroCidade(QDialog):
 
             session.commit()
 
-            self.ui.lineEditNome.setText("")
+            self.clear_all()
 
             self.cidade = Cidade()
             self.cidade.id = 0
@@ -54,3 +58,8 @@ class CadastroCidade(QDialog):
 
         except Exception as ex:
             print(ex)
+
+    @Slot()
+    def sair(self):
+        self.clear_all()
+        self.close()

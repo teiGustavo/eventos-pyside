@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QDoubleSpinBox,
-    QFormLayout, QHBoxLayout, QLabel, QPushButton,
-    QSizePolicy, QWidget)
+from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QComboBox, QDialog,
+    QDoubleSpinBox, QFormLayout, QHBoxLayout, QLabel,
+    QPushButton, QSizePolicy, QWidget)
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -73,7 +73,9 @@ class Ui_Dialog(object):
 
         self.doubleSpinBoxCache = QDoubleSpinBox(self.formLayoutWidget)
         self.doubleSpinBoxCache.setObjectName(u"doubleSpinBoxCache")
+        self.doubleSpinBoxCache.setProperty("showGroupSeparator", False)
         self.doubleSpinBoxCache.setMaximum(1000000000000.000000000000000)
+        self.doubleSpinBoxCache.setStepType(QAbstractSpinBox.DefaultStepType)
 
         self.formLayout.setWidget(0, QFormLayout.FieldRole, self.doubleSpinBoxCache)
 
@@ -94,5 +96,7 @@ class Ui_Dialog(object):
         self.labelCache.setText(QCoreApplication.translate("Dialog", u"Cach\u00ea:", None))
         self.labelArtista.setText(QCoreApplication.translate("Dialog", u"Artista:", None))
         self.labelEvento.setText(QCoreApplication.translate("Dialog", u"Evento:", None))
+        self.doubleSpinBoxCache.setPrefix(QCoreApplication.translate("Dialog", u"R$ ", None))
+        self.doubleSpinBoxCache.setSuffix("")
     # retranslateUi
 

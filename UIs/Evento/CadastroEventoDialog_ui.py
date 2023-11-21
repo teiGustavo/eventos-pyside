@@ -87,6 +87,7 @@ class Ui_Dialog(object):
 
         self.formLayout.setWidget(0, QFormLayout.FieldRole, self.dateEditData)
 
+        QWidget.setTabOrder(self.dateEditData, self.lineEditLocalizacao)
         QWidget.setTabOrder(self.lineEditLocalizacao, self.comboBoxTipoEvento)
         QWidget.setTabOrder(self.comboBoxTipoEvento, self.comboBoxCidade)
         QWidget.setTabOrder(self.comboBoxCidade, self.pushButtonSalvar)

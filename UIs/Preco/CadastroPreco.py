@@ -11,6 +11,7 @@ class CadastroPreco(QDialog):
         self.ui.setupUi(self)
 
         self.ui.pushButtonSalvar.clicked.connect(self.salvar)
+        self.ui.pushButtonCancelar.clicked.connect(self.sair)
 
         self.preco = Preco()
         self.preco.id = 0
@@ -33,6 +34,9 @@ class CadastroPreco(QDialog):
         self.form_pesquisa.preencher_tabela()
         return super().closeEvent(event)
 
+    def clear_all(self):
+        self.ui.doubleSpinBoxCache.clear()
+
     @Slot()
     def salvar(self):
         try:
@@ -47,7 +51,7 @@ class CadastroPreco(QDialog):
 
             session.commit()
 
-            self.ui.doubleSpinBoxCache.clear()
+            self.clear_all()
 
             self.preco = Preco()
             self.preco.id = 0
@@ -56,3 +60,8 @@ class CadastroPreco(QDialog):
 
         except Exception as ex:
             print(ex)
+
+    @Slot()
+    def sair(self):
+        self.clear_all()
+        self.close()

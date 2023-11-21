@@ -12,6 +12,7 @@ class CadastroTipoEvento(QDialog):
         self.ui.setupUi(self)
 
         self.ui.pushButtonSalvar.clicked.connect(self.salvar)
+        self.ui.pushButtonCancelar.clicked.connect(self.sair)
 
         self.tipo_evento = TipoEvento()
         self.tipo_evento.id = 0
@@ -25,6 +26,9 @@ class CadastroTipoEvento(QDialog):
         self.form_pesquisa.preencher_tabela()
         return super().closeEvent(event)
 
+    def clear_all(self):
+        self.ui.lineEditNome.setText("")
+
     @Slot()
     def salvar(self):
         try:
@@ -37,7 +41,7 @@ class CadastroTipoEvento(QDialog):
 
             session.commit()
 
-            self.ui.lineEditNome.setText("")
+            self.clear_all()
 
             self.tipo_evento = TipoEvento()
             self.tipo_evento.id = 0
@@ -46,3 +50,8 @@ class CadastroTipoEvento(QDialog):
 
         except Exception as ex:
             print(ex)
+
+    @Slot()
+    def sair(self):
+        self.clear_all()
+        self.close()

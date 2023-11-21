@@ -70,9 +70,9 @@ class Ui_MainWindow(object):
         self.menuCadastro.addAction(self.actionEvento)
         self.menuCadastro.addAction(self.actionPreco)
         self.menuCadastro.addAction(self.actionApresentacao)
-        self.menuCadastro.addAction(self.actionReceita)
         self.menuCadastro.addAction(self.actionTipoDespesa)
         self.menuCadastro.addAction(self.actionDespesa)
+        self.menuCadastro.addAction(self.actionReceita)
 
         self.retranslateUi(MainWindow)
 

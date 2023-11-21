@@ -33,7 +33,7 @@ class PesquisaPreco(QWidget):
         preco = Preco()
 
         preco.id = (table.item(linha, 0)).text()
-        preco.cache = (table.item(linha, 1)).text()
+        preco.cache = unformat_monetary((table.item(linha, 1)).text())
 
         artista = (table.item(linha, 2)).text()
         preco.artista_id = get_artista_by_name(artista)
@@ -87,10 +87,12 @@ class PesquisaPreco(QWidget):
                 if coluna == 0:
                     valor = QTableWidgetItem(f"{preco.id}")
                 if coluna == 1:
-                    valor = QTableWidgetItem(f"{preco.cache}")
+                    valor = QTableWidgetItem(f"{format_monetary(preco.cache)}")
                 if coluna == 2:
                     valor = QTableWidgetItem(f"{get_artista_by_id(preco.artista_id)}")
+                    self.ui.tableResultado.horizontalHeader().setSectionResizeMode(2, QHeaderView.ResizeMode.ResizeToContents)
                 if coluna == 3:
                     valor = QTableWidgetItem(f"{get_evento_by_id(preco.evento_id)}")
+                    self.ui.tableResultado.horizontalHeader().setSectionResizeMode(3, QHeaderView.ResizeMode.ResizeToContents)
 
                 self.ui.tableResultado.setItem(linha, coluna, valor)

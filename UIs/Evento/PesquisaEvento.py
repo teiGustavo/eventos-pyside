@@ -44,7 +44,7 @@ class PesquisaEvento(QWidget):
 
         self.evento = evento
 
-        self.cadastro.ui.dateEditData.dateTimeFromText(evento.data)
+        self.cadastro.ui.dateEditData.setDate(QDate.fromString(evento.data, "yyyy-MM-dd"))
         self.cadastro.ui.lineEditLocalizacao.setText(evento.localizacao)
 
         index = self.cadastro.ui.comboBoxTipoEvento.findText(tipo_evento)
@@ -92,6 +92,7 @@ class PesquisaEvento(QWidget):
                     valor = QTableWidgetItem(f"{unformat_sql_date(evento.data)}")
                 if coluna == 2:
                     valor = QTableWidgetItem(f"{evento.localizacao}")
+                    self.ui.tableResultado.horizontalHeader().setSectionResizeMode(2, QHeaderView.ResizeMode.ResizeToContents)
                 if coluna == 3:
                     valor = QTableWidgetItem(f"{get_tipo_evento_by_id(evento.tipo_evento_id)}")
                 if coluna == 4:

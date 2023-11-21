@@ -5,10 +5,10 @@ from UIs.Artista.PesquisaArtista import *
 from UIs.TipoEvento.PesquisaTipoEvento import *
 from UIs.Evento.PesquisaEvento import *
 from UIs.Preco.PesquisaPreco import *
-# from UIs.Apresentacao.PesquisaApresentacao import *
+from UIs.Apresentacao.PesquisaApresentacao import *
 from UIs.TipoDespesa.PesquisaTipoDespesa import *
-# from UIs.Despesa.PesquisaDespesa import *
-# from UIs.Receita.PesquisaReceita import *
+from UIs.Despesa.PesquisaDespesa import *
+from UIs.Receita.PesquisaReceita import *
 from UIs.MainMenu_ui import *
 from PySide6.QtCore import Slot
 
@@ -27,10 +27,10 @@ class MainMenu(QMainWindow):
         self.ui.actionTipoEvento.triggered.connect(self.exibe_pesquisa_tipo_evento)
         self.ui.actionEvento.triggered.connect(self.exibe_pesquisa_evento)
         self.ui.actionPreco.triggered.connect(self.exibe_pesquisa_preco)
-        # self.ui.actionApresentacao.triggered.connect(self.)
+        self.ui.actionApresentacao.triggered.connect(self.exibe_pesquisa_apresentacao)
         self.ui.actionTipoDespesa.triggered.connect(self.exibe_pesquisa_tipo_despesa)
-        # self.ui.actionDespesa.triggered.connect(self.)
-        # self.ui.actionReceita.triggered.connect(self.)
+        self.ui.actionDespesa.triggered.connect(self.exibe_pesquisa_despesa)
+        self.ui.actionReceita.triggered.connect(self.exibe_pesquisa_receita)
 
     @Slot()
     def exibe_pesquisa_estado(self):
@@ -68,6 +68,21 @@ class MainMenu(QMainWindow):
         self.pesquisa_preco.show()
 
     @Slot()
+    def exibe_pesquisa_apresentacao(self):
+        self.pesquisa_apresentacao = PesquisaApresentacao(parent=None)
+        self.pesquisa_apresentacao.show()
+
+    @Slot()
     def exibe_pesquisa_tipo_despesa(self):
         self.pesquisa_tipo_despesa = PesquisaTipoDespesa(parent=None)
         self.pesquisa_tipo_despesa.show()
+
+    @Slot()
+    def exibe_pesquisa_despesa(self):
+        self.pesquisa_despesa = PesquisaDespesa(parent=None)
+        self.pesquisa_despesa.show()
+
+    @Slot()
+    def exibe_pesquisa_receita(self):
+        self.pesquisa_receita = PesquisaReceita(parent=None)
+        self.pesquisa_receita.show()

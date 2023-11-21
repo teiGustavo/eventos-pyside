@@ -42,24 +42,46 @@ class Ui_Dialog(object):
 
         self.formLayoutWidget = QWidget(Dialog)
         self.formLayoutWidget.setObjectName(u"formLayoutWidget")
-        self.formLayoutWidget.setGeometry(QRect(10, 40, 381, 136))
+        self.formLayoutWidget.setGeometry(QRect(10, 40, 381, 141))
         self.formLayout = QFormLayout(self.formLayoutWidget)
         self.formLayout.setObjectName(u"formLayout")
         self.formLayout.setContentsMargins(0, 0, 0, 0)
         self.labelDescricao = QLabel(self.formLayoutWidget)
         self.labelDescricao.setObjectName(u"labelDescricao")
 
-        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.labelDescricao)
+        self.formLayout.setWidget(1, QFormLayout.LabelRole, self.labelDescricao)
 
         self.labelValor = QLabel(self.formLayoutWidget)
         self.labelValor.setObjectName(u"labelValor")
 
-        self.formLayout.setWidget(1, QFormLayout.LabelRole, self.labelValor)
+        self.formLayout.setWidget(2, QFormLayout.LabelRole, self.labelValor)
+
+        self.lineEditDescricao = QLineEdit(self.formLayoutWidget)
+        self.lineEditDescricao.setObjectName(u"lineEditDescricao")
+
+        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.lineEditDescricao)
+
+        self.doubleSpinBoxValor = QDoubleSpinBox(self.formLayoutWidget)
+        self.doubleSpinBoxValor.setObjectName(u"doubleSpinBoxValor")
+        self.doubleSpinBoxValor.setMaximum(1000000000000.989990234375000)
+
+        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.doubleSpinBoxValor)
 
         self.labelData = QLabel(self.formLayoutWidget)
         self.labelData.setObjectName(u"labelData")
 
-        self.formLayout.setWidget(2, QFormLayout.LabelRole, self.labelData)
+        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.labelData)
+
+        self.dateEditData = QDateEdit(self.formLayoutWidget)
+        self.dateEditData.setObjectName(u"dateEditData")
+        self.dateEditData.setCalendarPopup(True)
+
+        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.dateEditData)
+
+        self.comboBoxTipoDespesa = QComboBox(self.formLayoutWidget)
+        self.comboBoxTipoDespesa.setObjectName(u"comboBoxTipoDespesa")
+
+        self.formLayout.setWidget(3, QFormLayout.FieldRole, self.comboBoxTipoDespesa)
 
         self.labelTipoDespesa = QLabel(self.formLayoutWidget)
         self.labelTipoDespesa.setObjectName(u"labelTipoDespesa")
@@ -71,35 +93,14 @@ class Ui_Dialog(object):
 
         self.formLayout.setWidget(4, QFormLayout.LabelRole, self.labelEvento)
 
-        self.lineEditDescricao = QLineEdit(self.formLayoutWidget)
-        self.lineEditDescricao.setObjectName(u"lineEditDescricao")
-
-        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.lineEditDescricao)
-
-        self.doubleSpinBoxValor = QDoubleSpinBox(self.formLayoutWidget)
-        self.doubleSpinBoxValor.setObjectName(u"doubleSpinBoxValor")
-
-        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.doubleSpinBoxValor)
-
-        self.dateEditData = QDateEdit(self.formLayoutWidget)
-        self.dateEditData.setObjectName(u"dateEditData")
-        self.dateEditData.setCalendarPopup(True)
-
-        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.dateEditData)
-
-        self.comboBoxTipoDespesa = QComboBox(self.formLayoutWidget)
-        self.comboBoxTipoDespesa.setObjectName(u"comboBoxTipoDespesa")
-
-        self.formLayout.setWidget(3, QFormLayout.FieldRole, self.comboBoxTipoDespesa)
-
         self.comboBoxEvento = QComboBox(self.formLayoutWidget)
         self.comboBoxEvento.setObjectName(u"comboBoxEvento")
 
         self.formLayout.setWidget(4, QFormLayout.FieldRole, self.comboBoxEvento)
 
+        QWidget.setTabOrder(self.dateEditData, self.lineEditDescricao)
         QWidget.setTabOrder(self.lineEditDescricao, self.doubleSpinBoxValor)
-        QWidget.setTabOrder(self.doubleSpinBoxValor, self.dateEditData)
-        QWidget.setTabOrder(self.dateEditData, self.comboBoxTipoDespesa)
+        QWidget.setTabOrder(self.doubleSpinBoxValor, self.comboBoxTipoDespesa)
         QWidget.setTabOrder(self.comboBoxTipoDespesa, self.comboBoxEvento)
         QWidget.setTabOrder(self.comboBoxEvento, self.pushButtonSalvar)
         QWidget.setTabOrder(self.pushButtonSalvar, self.pushButtonCancelar)
@@ -115,6 +116,7 @@ class Ui_Dialog(object):
         self.pushButtonCancelar.setText(QCoreApplication.translate("Dialog", u"Cancelar", None))
         self.labelDescricao.setText(QCoreApplication.translate("Dialog", u"Descri\u00e7\u00e3o:", None))
         self.labelValor.setText(QCoreApplication.translate("Dialog", u"Valor:", None))
+        self.doubleSpinBoxValor.setPrefix(QCoreApplication.translate("Dialog", u"R$ ", None))
         self.labelData.setText(QCoreApplication.translate("Dialog", u"Data:", None))
         self.labelTipoDespesa.setText(QCoreApplication.translate("Dialog", u"Tipo de Despesa:", None))
         self.labelEvento.setText(QCoreApplication.translate("Dialog", u"Evento:", None))

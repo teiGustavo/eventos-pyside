@@ -64,7 +64,10 @@ class PesquisaArtista(QWidget):
         valor_pesquisa = self.ui.EditValorPesquisa.text()
 
         if valor_pesquisa != "":
-            resultados = session.query(Artista).filter(Artista.nome.contains(valor_pesquisa)).all()
+            resultados = session.query(Artista).filter(
+                Artista.nome.contains(valor_pesquisa) | Artista.telefone.contains(valor_pesquisa) |
+                Artista.email.contains(valor_pesquisa) | Artista.pagina_web.contains(valor_pesquisa)
+            ).all()
         else:
             resultados = session.query(Artista).join(Genero).all()
 
@@ -89,12 +92,15 @@ class PesquisaArtista(QWidget):
                     valor = QTableWidgetItem(f"{artista.id}")
                 if coluna == 1:
                     valor = QTableWidgetItem(f"{artista.nome}")
+                    self.ui.tableResultado.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeMode.ResizeToContents)
                 if coluna == 2:
                     valor = QTableWidgetItem(f"{artista.telefone}")
                 if coluna == 3:
                     valor = QTableWidgetItem(f"{artista.email}")
+                    self.ui.tableResultado.horizontalHeader().setSectionResizeMode(3, QHeaderView.ResizeMode.ResizeToContents)
                 if coluna == 4:
                     valor = QTableWidgetItem(f"{artista.pagina_web}")
+                    self.ui.tableResultado.horizontalHeader().setSectionResizeMode(4, QHeaderView.ResizeMode.ResizeToContents)
                 if coluna == 5:
                     valor = QTableWidgetItem(f"{get_genero_by_id(artista.genero_id)}")
 

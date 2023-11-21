@@ -42,7 +42,7 @@ class Ui_Dialog(object):
 
         self.formLayoutWidget = QWidget(Dialog)
         self.formLayoutWidget.setObjectName(u"formLayoutWidget")
-        self.formLayoutWidget.setGeometry(QRect(10, 40, 381, 51))
+        self.formLayoutWidget.setGeometry(QRect(10, 40, 381, 52))
         self.formLayout = QFormLayout(self.formLayoutWidget)
         self.formLayout.setObjectName(u"formLayout")
         self.formLayout.setContentsMargins(0, 0, 0, 0)
@@ -53,6 +53,7 @@ class Ui_Dialog(object):
 
         self.doubleSpinBoxValor = QDoubleSpinBox(self.formLayoutWidget)
         self.doubleSpinBoxValor.setObjectName(u"doubleSpinBoxValor")
+        self.doubleSpinBoxValor.setMaximum(10000000000.000000000000000)
 
         self.formLayout.setWidget(0, QFormLayout.FieldRole, self.doubleSpinBoxValor)
 
@@ -80,6 +81,7 @@ class Ui_Dialog(object):
         self.pushButtonSalvar.setText(QCoreApplication.translate("Dialog", u"Salvar", None))
         self.pushButtonCancelar.setText(QCoreApplication.translate("Dialog", u"Cancelar", None))
         self.labelValor.setText(QCoreApplication.translate("Dialog", u"Valor:", None))
+        self.doubleSpinBoxValor.setPrefix(QCoreApplication.translate("Dialog", u"R$ ", None))
         self.labelEvento.setText(QCoreApplication.translate("Dialog", u"Evento:", None))
     # retranslateUi
 

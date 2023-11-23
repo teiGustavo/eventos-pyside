@@ -9,7 +9,7 @@ class PesquisaGenero(QWidget):
 
         self.ui = Ui_FormPesquisa()
         self.ui.setupUi(self)
-        self.setWindowTitle("Gênero - Eventos")
+        self.setWindowTitle("Gênero Musical - Eventos")
 
         self.preencher_tabela()
 

@@ -104,6 +104,7 @@ class Ui_Dialog(object):
         self.pushButtonCancelar.setText(QCoreApplication.translate("Dialog", u"Cancelar", None))
         self.labelData.setText(QCoreApplication.translate("Dialog", u"Data:", None))
         self.labelLocalizacao.setText(QCoreApplication.translate("Dialog", u"Localiza\u00e7\u00e3o:", None))
+        self.lineEditLocalizacao.setPlaceholderText(QCoreApplication.translate("Dialog", u"Localiza\u00e7\u00e3o do Evento", None))
         self.labelTipoEvento.setText(QCoreApplication.translate("Dialog", u"Tipo de Evento:", None))
         self.labelCidade.setText(QCoreApplication.translate("Dialog", u"Cidade:", None))
     # retranslateUi

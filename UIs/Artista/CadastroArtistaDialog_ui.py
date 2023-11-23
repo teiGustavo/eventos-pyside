@@ -93,6 +93,7 @@ class Ui_Dialog(object):
 
         self.lineEditTelefone = QLineEdit(self.formLayoutWidget)
         self.lineEditTelefone.setObjectName(u"lineEditTelefone")
+        self.lineEditTelefone.setMaxLength(16)
 
         self.formLayout.setWidget(1, QFormLayout.FieldRole, self.lineEditTelefone)
 
@@ -113,9 +114,13 @@ class Ui_Dialog(object):
         self.pushButtonSalvar.setText(QCoreApplication.translate("Dialog", u"Salvar", None))
         self.pushButtonCancelar.setText(QCoreApplication.translate("Dialog", u"Cancelar", None))
         self.labelNome.setText(QCoreApplication.translate("Dialog", u"Nome:", None))
+        self.lineEditNome.setPlaceholderText(QCoreApplication.translate("Dialog", u"Nome do Artista", None))
         self.labelGenero.setText(QCoreApplication.translate("Dialog", u"G\u00eanero:", None))
         self.labelPagina.setText(QCoreApplication.translate("Dialog", u"P\u00e1gina:", None))
+        self.lineEditPagina.setPlaceholderText(QCoreApplication.translate("Dialog", u"P\u00e1gina Web do Artista", None))
         self.labelEmail.setText(QCoreApplication.translate("Dialog", u"Email:", None))
+        self.lineEditEmail.setPlaceholderText(QCoreApplication.translate("Dialog", u"Email do Artista", None))
         self.labelTelefone.setText(QCoreApplication.translate("Dialog", u"Telefone:", None))
+        self.lineEditTelefone.setPlaceholderText(QCoreApplication.translate("Dialog", u"Telefone do Artista", None))
     # retranslateUi
 

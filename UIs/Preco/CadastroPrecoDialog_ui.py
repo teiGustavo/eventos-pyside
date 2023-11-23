@@ -90,7 +90,7 @@ class Ui_Dialog(object):
     # setupUi
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Cadastro de Preco - Eventos", None))
+        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Cadastro de Pre\u00e7o do Artista - Eventos", None))
         self.pushButtonSalvar.setText(QCoreApplication.translate("Dialog", u"Salvar", None))
         self.pushButtonCancelar.setText(QCoreApplication.translate("Dialog", u"Cancelar", None))
         self.labelCache.setText(QCoreApplication.translate("Dialog", u"Cach\u00ea:", None))

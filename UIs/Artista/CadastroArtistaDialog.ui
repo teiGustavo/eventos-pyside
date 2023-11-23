@@ -57,7 +57,11 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QLineEdit" name="lineEditNome"/>
+     <widget class="QLineEdit" name="lineEditNome">
+      <property name="placeholderText">
+       <string>Nome do Artista</string>
+      </property>
+     </widget>
     </item>
     <item row="4" column="0">
      <widget class="QLabel" name="labelGenero">
@@ -77,7 +81,11 @@
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QLineEdit" name="lineEditPagina"/>
+     <widget class="QLineEdit" name="lineEditPagina">
+      <property name="placeholderText">
+       <string>Página Web do Artista</string>
+      </property>
+     </widget>
     </item>
     <item row="2" column="0">
      <widget class="QLabel" name="labelEmail">
@@ -87,7 +95,11 @@
      </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QLineEdit" name="lineEditEmail"/>
+     <widget class="QLineEdit" name="lineEditEmail">
+      <property name="placeholderText">
+       <string>Email do Artista</string>
+      </property>
+     </widget>
     </item>
     <item row="1" column="0">
      <widget class="QLabel" name="labelTelefone">
@@ -100,6 +112,9 @@
      <widget class="QLineEdit" name="lineEditTelefone">
       <property name="maxLength">
        <number>16</number>
+      </property>
+      <property name="placeholderText">
+       <string>Telefone do Artista</string>
       </property>
      </widget>
     </item>

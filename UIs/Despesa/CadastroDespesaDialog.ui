@@ -64,7 +64,11 @@
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QLineEdit" name="lineEditDescricao"/>
+     <widget class="QLineEdit" name="lineEditDescricao">
+      <property name="placeholderText">
+       <string>Descrição da Despesa</string>
+      </property>
+     </widget>
     </item>
     <item row="2" column="1">
      <widget class="QDoubleSpinBox" name="doubleSpinBoxValor">

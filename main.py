@@ -1,5 +1,4 @@
 import sys
-from conexao import *
 from UIs.MainMenu import *
 
 

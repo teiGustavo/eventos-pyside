@@ -116,6 +116,7 @@ class Ui_Dialog(object):
         self.pushButtonCancelar.setText(QCoreApplication.translate("Dialog", u"Cancelar", None))
         self.labelDescricao.setText(QCoreApplication.translate("Dialog", u"Descri\u00e7\u00e3o:", None))
         self.labelValor.setText(QCoreApplication.translate("Dialog", u"Valor:", None))
+        self.lineEditDescricao.setPlaceholderText(QCoreApplication.translate("Dialog", u"Descri\u00e7\u00e3o da Despesa", None))
         self.doubleSpinBoxValor.setPrefix(QCoreApplication.translate("Dialog", u"R$ ", None))
         self.labelData.setText(QCoreApplication.translate("Dialog", u"Data:", None))
         self.labelTipoDespesa.setText(QCoreApplication.translate("Dialog", u"Tipo de Despesa:", None))

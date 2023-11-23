@@ -80,6 +80,7 @@ class Ui_Dialog(object):
         self.pushButtonSalvar.setText(QCoreApplication.translate("Dialog", u"Salvar", None))
         self.pushButtonCancelar.setText(QCoreApplication.translate("Dialog", u"Cancelar", None))
         self.labelNome.setText(QCoreApplication.translate("Dialog", u"Nome:", None))
+        self.lineEditNome.setPlaceholderText(QCoreApplication.translate("Dialog", u"Nome da Cidade", None))
         self.labelEstado.setText(QCoreApplication.translate("Dialog", u"Estado:", None))
     # retranslateUi
 

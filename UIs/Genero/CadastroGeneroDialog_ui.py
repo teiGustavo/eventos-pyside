@@ -65,9 +65,10 @@ class Ui_Dialog(object):
     # setupUi
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Cadastro de G\u00eanero - Eventos", None))
+        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Cadastro de G\u00eanero Musical - Eventos", None))
         self.pushButtonSalvar.setText(QCoreApplication.translate("Dialog", u"Salvar", None))
         self.pushButtonCancelar.setText(QCoreApplication.translate("Dialog", u"Cancelar", None))
         self.labelNome.setText(QCoreApplication.translate("Dialog", u"Nome:", None))
+        self.lineEditNome.setPlaceholderText(QCoreApplication.translate("Dialog", u"Nome do G\u00eanero Musical", None))
     # retranslateUi
 

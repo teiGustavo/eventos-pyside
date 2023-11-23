@@ -9,7 +9,7 @@ class PesquisaTipoEvento(QWidget):
 
         self.ui = Ui_FormPesquisa()
         self.ui.setupUi(self)
-        self.setWindowTitle("Tipo Evento - Eventos")
+        self.setWindowTitle("Tipo de Evento - Eventos")
 
         self.preencher_tabela()
 
